@@ -33,7 +33,7 @@ main input {
   margin-bottom: 20px;
 }
 section {
-  position: fixed;
+  position: absolute;
   box-shadow: -6px -2px 25px -13px rgba(0, 0, 0, 0.15);
   width: 340px;
   height: 100%;
