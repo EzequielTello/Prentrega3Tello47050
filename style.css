@@ -173,3 +173,15 @@ section h3 {
     right: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    display: none;
+  }
+}
