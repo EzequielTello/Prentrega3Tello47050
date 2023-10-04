@@ -6,7 +6,7 @@
 .titulo {
   text-align: center;
   color: white;
-  font-size: 100px;
+  font-size: 60px;
   font-family: "Courier New", Courier, monospace;
 }
 body {
@@ -150,4 +150,26 @@ section h3 {
   max-height: 96%;
   overflow-y: auto;
   padding-left: 5px;
+}
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 40px;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  main input {
+    font-size: 20px;
+  }
+
+  section {
+    width: 100%;
+    padding: 10px;
+  }
+
+  section h2 {
+    right: 10px;
+  }
 }
