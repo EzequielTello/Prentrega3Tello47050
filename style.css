@@ -11,6 +11,8 @@
 }
 body {
   font-family: "Lucida Sans", sans-serif;
+}
+.fpantalla {
   background-image: url("./imagenes/fondodepagina.jpg");
   background-size: cover;
   background-repeat: no-repeat;
