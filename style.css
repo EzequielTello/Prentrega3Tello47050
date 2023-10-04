@@ -11,7 +11,7 @@
 }
 body {
   font-family: "Lucida Sans", sans-serif;
-  background: url("./imagenes/fondodepagina.jpg");
+  background-image: url("./imagenes/fondodepagina.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -52,7 +52,7 @@ section h2 {
   cursor: pointer;
   color: blue;
   box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
-  background: url("./imagenes/carrito.png") no-repeat rgb(113, 113, 220);
+  background-image: url("./imagenes/carrito.png") no-repeat rgb(113, 113, 220);
   background-size: 60%;
   background-position: 9px center;
 }
