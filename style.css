@@ -182,7 +182,7 @@ section h3 {
 
 @media (max-width: 768px) {
   section {
-    display: none;
+    display: block;
   }
 }
 @media (max-width: 768px) {
