@@ -3,7 +3,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 .titulo {
   text-align: center;
   color: white;
@@ -36,7 +35,7 @@ main input {
 section {
   position: absolute;
   box-shadow: -6px -2px 25px -13px rgba(0, 0, 0, 0.15);
-  width: 100%;
+  width: 340px;
   height: 100%;
   top: 0;
   right: 0;
@@ -47,7 +46,7 @@ section {
 section h2 {
   position: absolute;
   top: 15%;
-  right: 10px;
+  right: 360px;
   display: block;
   width: 50px;
   height: 50px;
@@ -101,7 +100,7 @@ section h3 {
   margin-bottom: 8px;
 }
 .ocultar {
-  right: 100%;
+  right: -340px;
   transition: all 0.3s;
 }
 #productos {
@@ -148,7 +147,33 @@ section h3 {
   box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
 }
 #scroll {
-  max-height: calc(100% - 100px);
+  max-height: 60%;
   overflow-y: auto;
   padding-left: 5px;
+}
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 40px;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  main input {
+    font-size: 20px;
+  }
+
+  section {
+    width: 100%;
+    right: 0;
+  }
+
+  section h2 {
+    right: 0;
+  }
+
+  #scroll {
+    max-height: 50vh;
+  }
 }
