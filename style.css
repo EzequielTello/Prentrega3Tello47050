@@ -171,6 +171,7 @@ section h3 {
 
   section h2 {
     right: 10px;
+    margin-top: 10px;
   }
 }
 
@@ -187,6 +188,6 @@ section h3 {
 }
 @media (max-width: 768px) {
   #scroll {
-    max-height: none;
+    max-height: 10px;
   }
 }
