@@ -177,3 +177,30 @@ section h3 {
     max-height: 50vh;
   }
 }
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  position: end;
+  background-color: white;
+}
+
+.footercontacto {
+  margin-top: 30px;
+}
+
+.logofacebook {
+  width: 60px;
+  padding: 5%;
+}
+
+.logowhatsapp {
+  width: 60px;
+  padding: 7%;
+}
+
+.logoinstagram {
+  width: 60px;
+  padding: 7%;
+}
