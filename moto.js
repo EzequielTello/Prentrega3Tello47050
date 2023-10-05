@@ -174,7 +174,7 @@ class Carrito {
     // Recorro producto por producto del carrito, y los dibujo en el HTML
     for (const producto of this.carrito) {
       divCarrito.innerHTML += `
-          <div class="productoCarrito col-md-4">
+          <div class="productoCarrito">
             <h3>${producto.nombre}</h3>
             <p>$${producto.precio}</p>
             <p>Cantidad: ${producto.cantidad}</p>
@@ -229,7 +229,7 @@ function cargarProductos(productos) {
   // Recorremos producto por producto y lo dibujamos en el HTML
   for (const producto of productos) {
     divProductos.innerHTML += `
-        <div class="producto col-md-4">
+        <div class="producto">
           <h3>${producto.nombre}</h3>
           <p class="precio">$${producto.precio}</p>
           <div class="imagen">
