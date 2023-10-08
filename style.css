@@ -18,7 +18,6 @@ body {
   background-repeat: no-repeat;
 }
 main {
-  width: 60%;
   margin: auto;
   padding: 20px 0 0 0;
 }
@@ -58,7 +57,7 @@ section h2 {
   background-size: 60%;
   background-position: 9px center;
 }
-section h2 span {
+h2 span {
   display: block;
   background-color: #d15280;
   border-radius: 150px;
@@ -67,6 +66,16 @@ section h2 span {
   text-align: center;
   font-size: 14px;
   margin: -10px 0 0 30px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: black;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
+  background: url("./imagenes/carrito.png") no-repeat rgb(113, 113, 220);
+  background-size: 60%;
+  background-position: 9px center;
 }
 section h3 {
   padding-top: 10px;
@@ -102,9 +111,9 @@ section h3 {
 .ocultar {
   right: -340px;
   transition: all 0.3s;
+  display: none;
 }
 #productos {
-  display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -203,4 +212,31 @@ footer {
 .logoinstagram {
   width: 60px;
   padding: 7%;
+}
+.boton-cierre {
+  background-color: #ff5733;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.boton-cierre:hover {
+  background-color: #ff4500;
+  color: #ffffff;
+}
+#comprarBtn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+#comprarBtn:hover {
+  background-color: #0056b3;
 }

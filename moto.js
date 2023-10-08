@@ -86,6 +86,20 @@ class BaseDeDatos {
       "Accesorios",
       "../imagenes/cascocolor.png"
     );
+    this.agregarRegistro(
+      11,
+      "Asiento",
+      4000,
+      "Accesorios",
+      "../imagenes/asiento.png"
+    );
+    this.agregarRegistro(
+      12,
+      "Faro",
+      2500,
+      "Accesorios",
+      "../imagenes/faro.png"
+    );
   }
 
   // Método que almacena productos en el catálogo (array)
@@ -214,7 +228,8 @@ const spanTotalCarrito = document.querySelector("#totalCarrito");
 const divProductos = document.querySelector("#productos");
 const divCarrito = document.querySelector("#carrito");
 const inputBuscar = document.querySelector("#inputBuscar");
-const botonCarrito = document.querySelector("section h2");
+const botonCarrito = document.querySelector("h2");
+const botonCerrarCarrito = document.querySelector("#cerrarCarrito");
 
 // Instaciamos la clase Carrito
 const carrito = new Carrito();
@@ -229,7 +244,7 @@ function cargarProductos(productos) {
   // Recorremos producto por producto y lo dibujamos en el HTML
   for (const producto of productos) {
     divProductos.innerHTML += `
-        <div class="producto">
+        <div class="producto card col-md-3">
           <h3>${producto.nombre}</h3>
           <p class="precio">$${producto.precio}</p>
           <div class="imagen">
@@ -258,6 +273,33 @@ function cargarProductos(productos) {
   }
 }
 
+// Obtén una referencia al botón de compra por su ID
+const botonComprar = document.getElementById("comprarBtn");
+
+// Agrega un event listener al botón de compra
+botonComprar.addEventListener("click", function () {
+  realizarCompra();
+});
+// ...
+
+// Función para realizar la compra
+function realizarCompra() {
+  // Simula una acción de compra (puedes agregar aquí la lógica real de compra)
+  // En este ejemplo, simplemente se limpia el carrito
+  carrito.carrito = [];
+  localStorage.setItem("carrito", JSON.stringify(carrito.carrito));
+  carrito.listar();
+
+  // Muestra un mensaje de compra realizada con SweetAlert
+  Swal.fire({
+    icon: "success",
+    title: "Compra realizada con éxito",
+    text: "¡Gracias por tu compra!",
+  });
+}
+
+// ...
+
 // Buscador
 inputBuscar.addEventListener("input", (event) => {
   event.preventDefault();
@@ -268,5 +310,9 @@ inputBuscar.addEventListener("input", (event) => {
 
 // Toggle para ocultar/mostrar el carrito
 botonCarrito.addEventListener("click", (event) => {
+  document.querySelector("section").classList.toggle("ocultar");
+});
+
+botonCerrarCarrito.addEventListener("click", (event) => {
   document.querySelector("section").classList.toggle("ocultar");
 });
