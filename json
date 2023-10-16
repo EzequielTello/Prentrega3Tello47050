@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nombre": "HondaCB650",
+    "precio": 7000,
+    "categoria": "Motos",
+    "imagen": "./imagenes/hondacb650.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Suzuki350",
+    "precio": 6000,
+    "categoria": "Motos",
+    "imagen": "../imagenes/suzuki350.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Triumph550",
+    "precio": 8000,
+    "categoria": "Motos",
+    "imagen": "./imagenes/triumph550.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Yamaha500",
+    "precio": 7500,
+    "categoria": "Motos",
+    "imagen": "./imagenes/yamaha500.png"
+  },
+  {
+    "id": 5,
+    "nombre": "CascoNegro",
+    "precio": 2000,
+    "categoria": "Accesorios",
+    "imagen": "./imagenes/casconegro.png"
+  },
+  {
+    "id": 6,
+    "nombre": "CamperaNegra",
+    "precio": 3000,
+    "categoria": "Indumentaria",
+    "imagen": "./imagenes/camperanegra.png"
+  }
+]
