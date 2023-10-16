@@ -16,96 +16,14 @@ class BaseDeDatos {
     // Array para los productos del comercio
     this.productos = [];
     // Empezar a cargar productos
-    this.agregarRegistro(
-      1,
-      "HondaCB650",
-      7000,
-      "Motos",
-      "../imagenes/hondacb650.png"
-    );
-    this.agregarRegistro(
-      2,
-      "Suzuki350",
-      6000,
-      "Motos",
-      "../imagenes/suzuki350.png"
-    );
-    this.agregarRegistro(
-      3,
-      "Triumph550",
-      8000,
-      "Motos",
-      "../imagenes/triumph.png"
-    );
-    this.agregarRegistro(
-      4,
-      "Yamaha500",
-      7500,
-      "Motos",
-      "../imagenes/yamaha500.png"
-    );
-    this.agregarRegistro(
-      5,
-      "CascoNegro",
-      2000,
-      "Accesorios",
-      "../imagenes/casconegro.png"
-    );
-    this.agregarRegistro(
-      6,
-      "CamperaNegra",
-      3000,
-      "Indumentaria",
-      "../imagenes/camperanegra.png"
-    );
-    this.agregarRegistro(
-      7,
-      "GuanteAmarillo",
-      1000,
-      "Accesorios",
-      "../imagenes/guantea.png"
-    );
-    this.agregarRegistro(
-      8,
-      "GuanteMarrones",
-      1000,
-      "Accesorios",
-      "../imagenes/guantem.png"
-    );
-    this.agregarRegistro(
-      9,
-      "CamperaBlanca",
-      3000,
-      "Indumentaria",
-      "../imagenes/campblanca.png"
-    );
-    this.agregarRegistro(
-      10,
-      "CascoColor",
-      2000,
-      "Accesorios",
-      "../imagenes/cascocolor.png"
-    );
-    this.agregarRegistro(
-      11,
-      "Asiento",
-      4000,
-      "Accesorios",
-      "../imagenes/asiento.png"
-    );
-    this.agregarRegistro(
-      12,
-      "Faro",
-      2500,
-      "Accesorios",
-      "../imagenes/faro.png"
-    );
+    this.cargarRegistro();
   }
 
-  // Método que almacena productos en el catálogo (array)
-  agregarRegistro(id, nombre, precio, categoria, imagen) {
-    const producto = new Producto(id, nombre, precio, categoria, imagen);
-    this.productos.push(producto);
+  // Función asincrónica para cargar los productos desde un JSON
+  async cargarRegistros() {
+    const resultado = await fetch("./json/productos.jason");
+    this.productos = await resultado.json();
+    cargarProductos(this.productos);
   }
 
   // Nos devuelve catálogo de productos
@@ -199,6 +117,13 @@ class Carrito {
       this.total += producto.precio * producto.cantidad;
       this.cantidadProductos += producto.cantidad;
     }
+    if (this.cantidadProductos > 0) {
+      // Botón comprar visible
+      botonComprar.style.display = "block";
+    } else {
+      // Botón comprar invisible
+      botonComprar.style.display = "none";
+    }
     // Como no se cuantos productos hay en el carrito, les
     // asigno los eventos de forma dinámica a cada uno
     // Primero hago una lista de todos los botones con .querySelectorAll
@@ -269,6 +194,15 @@ function cargarProductos(productos) {
       const producto = bd.registroPorId(idProducto);
       // Llama al método agregar del carrito
       carrito.agregar(producto);
+      // Toastify
+      Toastify({
+        text: `Se ha añadido ${producto.nombre} al carrito`,
+        gravity: "bottom",
+        position: "center",
+        style: {
+          background: "linear-gradient(to right, #d15280, #244ced)",
+        },
+      }).showToast();
     });
   }
 }
@@ -280,7 +214,6 @@ const botonComprar = document.getElementById("comprarBtn");
 botonComprar.addEventListener("click", function () {
   realizarCompra();
 });
-// ...
 
 // Función para realizar la compra
 function realizarCompra() {
@@ -297,8 +230,6 @@ function realizarCompra() {
     text: "¡Gracias por tu compra!",
   });
 }
-
-// ...
 
 // Buscador
 inputBuscar.addEventListener("input", (event) => {
